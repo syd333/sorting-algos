@@ -1,5 +1,9 @@
 // BUBBLE SORT
-//sorting algo where the largest values bubble up to the top
+// sorting algo where the largest values bubble up to the top
+
+// TIME COMPLEXITY = O(N2)
+// if data is nearly sorted = O(N) linear 
+
 //PSEUDOCODE
 // start loopin from  end of arr towards beginning  with a varable called i 
 // start an inner loop with a variable called j from beginning until i-1 
@@ -52,7 +56,25 @@ function bubbleSort(arr) {
     return arr;
 }
 
-
+//OPTIMZATION
+function bubbleSort(arr) {
+    let noSwaps;
+    for (let i = arr.length; i > 0; i--) {
+        noSwaps = true;
+        for (let j = 0; j < i -1; j++) {
+            console.log(arr, arr[j], arr[j+1])
+            if (arr[j] > arr[j+1]) {
+                //SWAP
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                noSwaps = false;
+            }
+        }
+        if (noSwaps) break;
+    }
+    return arr;
+}
 
 bubbleSort([37,45,29,8]);
 
