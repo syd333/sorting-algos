@@ -10,6 +10,8 @@
 // if the "minimum" is not the value (index) you initially began with, swap the two values
 // repeat this with the next element until the array is sorted
 
+// TIME COMPLEXITY O(N2)
+
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let lowest = i;
