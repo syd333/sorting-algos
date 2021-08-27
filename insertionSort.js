@@ -8,6 +8,9 @@
 //      the sorted portion (left side) to place the element in correct place
 // repeat until the array is sorted
 
+//TIME COMPLEXITY
+// quadric 
+
 function insertionSort (arr) {
     for (let i = 1; i < arr.length; i++){
         let currentVal = arr[i];
