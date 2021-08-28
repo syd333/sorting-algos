@@ -3,6 +3,11 @@
 // faster sortings 
 // reduces time complexity from O(N2) to O(N LOG N)
 
+//TIME COMPLEXITY
+//BEST && AVERAGE && WORST = O(n log n)
+
+//SPACE COMPLEXITY ::: O(n)
+
 
 // in order to implement merge sort, its useful to first implement a function responsible for merging two sorted arrays
 // given two arrays which are sorted, this helper function should create a new array which is also sorted & consists 
@@ -45,4 +50,24 @@ function merge(arr1, arr2) {
     return results;
 }
 
-merge([1,10,50], [2,14,99,100])
+// merge([1,10,50], [2,14,99,100])
+
+
+// MERGESORT PSEUDOCODE
+// break up the array into halves until you have arrays that are empty or have one element
+// once you have smaller sorted arrays, merge those arrays with other sorted arrays 
+    // until you are back at the full length of the array
+// once the array has been merged back together
+// return the merged (and sorted) array
+
+//using recursion 
+// using function from above to merge sorted arrays
+function mergeSort (arr){
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right)
+}
+
+mergeSort([10,24,76,73,72,1,9])
