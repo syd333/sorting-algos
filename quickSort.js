@@ -50,3 +50,22 @@ function pivot(arr, start = 0, end = arr.length - 1) {
 }
 
 pivot([4, 8, 2, 1, 5, 7, 6, 3]);
+
+// QUICKSORT PSEUDOCODE
+// call the pivot helper on the array
+// when the helper returns to you the updated pivot index, recursively call the pivot helper on the subarray to the left of that index,
+// and the subarray to the right of that index (not making new arrays!)
+// your base case occurs when you consider a subarray with less than 2 elements
+
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+  return arr;
+}
+
+quickSort([4, 6, 9, 1, 2, 5, 3]);
