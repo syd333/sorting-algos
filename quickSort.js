@@ -2,6 +2,12 @@
 // like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
 // works by selecting one element (called the 'pivot') & finding the index where the pivot should end up in sorted array
 
+//TIME COMPLEXITY
+//BEST && AVERAGE = O(n log n)
+//WORST = O(n2)
+
+//SPACE COMPLEXITY ::: O(log n)
+
 //PIVOT HELPER
 // implement a function responsible arranging elements in an array on either side of pivot
 // given an array, this helper function should designate an element as the pivot
