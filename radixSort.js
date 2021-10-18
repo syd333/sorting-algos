@@ -5,6 +5,11 @@
     // IN THE NUMBER OF DIGITS
 // MORE DIGITS MEANS A BIGGER NUMBER
 
+//TIME COMPLEXITY
+//BEST && AVERAGE && WORST = O(nk)
+
+//SPACE COMPLEXITY ::: O(n + k)
+
 // ** RADIX SORT HELPER METHODS
 
 // getDigit(num, place) - returns the digit in num @ the given place value
