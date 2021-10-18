@@ -47,3 +47,26 @@ maxDigits([23, 567, 89, 12234324, 90]) //max number = 8
 // replace our existing array w values in our buckets, starting w 0 and going up to 9
 // return list at end
 
+function radixSort(nums) {
+    // biggest number in array has 4 elements
+    // means we loop 4 times
+    let maxDigitCount = mostDigits(nums);
+    for (let k = 0; k < maxDigitCount; k++) {
+        let digitBuckets = Array.from({length: 10}, () => [])
+        // makes array with 10 subarrays && tells it to make each subarray an empty array 
+        for (let i = 0; i < nums.length; i++) {
+            // at position 0 at each number what is that value? (345 -- at position 0: value is 5)
+            // k will move from (345 - 5 to 4 to 3) in each element 
+            // then need to push num into individual bucket
+            // digitBuckets[getDigit(nums[i], k)].push(nums[i])
+            let digit = getDigit(nums[i], k);
+            digitBuckets[digit].push(nums[i])
+        }
+        // now need to put all nums from buckets into sorted array
+        nums = [].concat(...digitBuckets);
+        // spread operator just takes values from subarrays and leaves out the extra arrays 
+    }
+    return nums;
+}
+
+radixSort([23, 345, 5467, 12, 2345, 9852])
