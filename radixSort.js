@@ -11,7 +11,6 @@
 function getDigit (num, i) {
     return Math.floor(Math.abs(num)/ Math.pow(10, i)) % 10;
 }
-
 getDigit(7323, 2)
 // 7323/100 = 73.23 (Math.floor = 73)
 // 73 % 10 = 3
@@ -25,3 +24,14 @@ function digitCount(num) {
 // log10 asks 10 to what power gives us this number then math.floor takes away decimal then add 1 (for actual # of digits not index)
 // math.abs takes away negative
 digitCount(423)
+
+
+// mostDigits(nums) - given an array of numbers, returns the number of digits in the largest numbers in the list
+function mostDigits(nums) {
+    let maxDigits = 0;
+    for (let i = 0; i < nums.length; i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+    }
+    return maxDigits;
+}
+maxDigits([23, 567, 89, 12234324, 90]) //max number = 8
