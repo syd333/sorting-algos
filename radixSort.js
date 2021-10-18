@@ -35,3 +35,15 @@ function mostDigits(nums) {
     return maxDigits;
 }
 maxDigits([23, 567, 89, 12234324, 90]) //max number = 8
+
+
+// **  RADIX SORT PSEUDOCODE
+// define a function that accepts list of numbers
+// figure out how many digits the largest number has (mostDigits)
+// loops from k=0 up to this largest number of digits
+// for each iteration of the loop:
+    // create buckets for each digit (0 to 9) (an empty array with subarrays for 0, 1, 2 etc)
+    // place each number in the corresponding bucket based on its kth (0th, 1st, 2nd etc) digit
+// replace our existing array w values in our buckets, starting w 0 and going up to 9
+// return list at end
+
